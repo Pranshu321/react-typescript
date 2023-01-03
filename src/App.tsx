@@ -19,6 +19,9 @@ import { Usercon } from "./components/Hooks/Context/Usercon";
 import Domref from "./components/Hooks/Ref/Domref";
 import { MutableRef } from "./components/Hooks/Ref/Mutable";
 import Toast from "./components/TemplateLiterals/Toast";
+import Text from "./components/Polymorphic/Text";
+import Button from "./components/Html/Button";
+import CustomComponent from "./components/Html/CustomComponent";
 
 function App() {
 	const PersonName = {
@@ -67,7 +70,18 @@ function App() {
 			</UserContextProvider> */}
 			{/* <Domref /> */}
 			{/* <MutableRef /> */}
-			<Toast position="center" />
+			{/* <Toast position="center" /> */}
+			{/* <Text as='h1' color="secondary" size="lg">Heading</Text>
+			<Text as="h3" color="secondary" size="md">Sub heading</Text>
+			<Text as="label" htmlFor="eww" color="secondary" size="sm">Paragraph</Text> */}
+			<Button
+				onClick={() => console.log("Customized button clied")}
+				variant="secondary"
+				text="This is customized button"
+			>
+				Heelo World
+			</Button>
+			<CustomComponent name="Pranshu" messageCount={2} loggedIn={true} />
 		</div>
 	);
 }
